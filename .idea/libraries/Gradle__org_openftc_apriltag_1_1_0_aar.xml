@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: org.openftc:apriltag:1.1.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/3c1dd28a13363b516db2557eb67c61fa/transformed/jetified-apriltag-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3c1dd28a13363b516db2557eb67c61fa/transformed/jetified-apriltag-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3c1dd28a13363b516db2557eb67c61fa/transformed/jetified-apriltag-1.1.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openftc/apriltag/1.1.0/afc329d027d74de72ca3e0284a34973a0524c38/apriltag-1.1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openftc/apriltag/1.1.0/5b3a401ffd04cd8d5b984d421e779aecbf1e5584/apriltag-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
