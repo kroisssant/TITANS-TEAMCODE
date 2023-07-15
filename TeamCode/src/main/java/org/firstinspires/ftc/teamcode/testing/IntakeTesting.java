@@ -99,6 +99,7 @@ package org.firstinspires.ftc.teamcode.testing;
 
 import androidx.annotation.NonNull;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
@@ -113,6 +114,7 @@ import org.firstinspires.ftc.teamcode.lib.ControllerInput;
 import org.firstinspires.ftc.teamcode.roadrunner.drive.SampleMecanumDrive;
 
 @TeleOp
+@Disabled
 public class IntakeTesting extends LinearOpMode {
     protected DcMotorEx motorIntake;
     protected ControllerInput controller;

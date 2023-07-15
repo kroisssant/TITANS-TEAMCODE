@@ -14,6 +14,7 @@ import com.acmerobotics.roadrunner.trajectory.constraints.ProfileAccelerationCon
 import com.acmerobotics.roadrunner.trajectory.constraints.TranslationalVelocityConstraint;
 import com.acmerobotics.roadrunner.util.Angle;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
@@ -35,6 +36,7 @@ import java.util.Arrays;
 
 
 @Autonomous (name = "stangaLaHTech")
+@Disabled
 public class StangaNormal extends LinearOpMode {
     public ElapsedTime timer = new ElapsedTime();
     public final SignalPipeline pipeline = new SignalPipeline(1.5F, new int[]{0, 1, 2});

@@ -38,7 +38,7 @@ public class MeepMeepTesting {
         //myFirstBot.followTrajectorySequence(REDAllianceRedTerminal(myFirstBot, initialPoseRedRedTerminal, pozitieParcare));
 
       //myFirstBot.followTrajectorySequence(stangaNormal(myFirstBot, initialPoseRedRedTerminal));
-      myFirstBot.followTrajectorySequence(dreaptaNormal(myFirstBot, initialPoseRedRedTerminal));
+      myFirstBot.followTrajectorySequence(stangaRebuild(myFirstBot, initialPoseRedRedTerminal));
         //myFirstBot.followTrajectorySequence(stangaMid(myFirstBot, initialPoseRedRedTerminal));
         //myFirstBot.followTrajectorySequence(dreaptaMid(myFirstBot, initialPoseRedRedTerminal));
         //myFirstBot.followTrajectorySequence(dreaptaMidSecondoOption(myFirstBot, initialPoseRedBlueTerminal));
@@ -49,6 +49,15 @@ public class MeepMeepTesting {
                 .setBackgroundAlpha(0.95f)
                 .addEntity(myFirstBot)
                 .start();
+    }
+
+    public static TrajectorySequence stangaRebuild(RoadRunnerBotEntity bot, Pose2d initialPose){
+        DriveShim drive = bot.getDrive();
+
+        return drive.trajectorySequenceBuilder(initialPose)
+                .lineToConstantHeading(new Vector2d(-35, -12))
+                .turn(Math.toRadians(80))
+                .lineToConstantHeading(new Vector2d(-55, -12)).build();
     }
 
     public static TrajectorySequence dreaptaMidSecondoOption(RoadRunnerBotEntity bot, Pose2d initialPose) {

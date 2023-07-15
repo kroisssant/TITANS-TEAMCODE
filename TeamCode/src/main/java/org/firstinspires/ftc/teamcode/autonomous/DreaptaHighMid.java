@@ -10,6 +10,7 @@ import com.acmerobotics.roadrunner.trajectory.constraints.MinVelocityConstraint;
 import com.acmerobotics.roadrunner.trajectory.constraints.ProfileAccelerationConstraint;
 import com.acmerobotics.roadrunner.trajectory.constraints.TranslationalVelocityConstraint;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
@@ -30,6 +31,7 @@ import java.util.Arrays;
 
 
 @Autonomous (name = "dreaptaHTech")
+@Disabled
 public class DreaptaHighMid extends LinearOpMode {
     public ElapsedTime timer = new ElapsedTime();
     public final SignalPipeline pipeline = new SignalPipeline(1.5F, new int[]{0, 1, 2});

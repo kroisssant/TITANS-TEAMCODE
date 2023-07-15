@@ -34,6 +34,9 @@ public class SignalPipeline extends OpenCvPipeline {
     // array of targets to search for
     public volatile int[] detectionIds = new int[3];
 
+    // array of rect coords to crop image
+    public int[] cropRect = null;
+
     // output code:
     // -1 : no target found
     // 0 : detectionIds[0] found
@@ -43,6 +46,19 @@ public class SignalPipeline extends OpenCvPipeline {
     // flag to signal end of april tag detection
     private boolean killAprilTags = false;
     private boolean startAprilTags = false;
+
+    public SignalPipeline(float _initDecimation, int[] _targets, int[] _cropRectCoords){
+        super();
+
+        this.detectorPtr = AprilTagDetectorJNI.createApriltagDetector(AprilTagDetectorJNI.TagFamily.TAG_36h11.string, _initDecimation, 2);
+        System.arraycopy(_targets, 0, this.detectionIds, 0, 3);
+        this.cropRect = new int[4];
+        System.arraycopy(_cropRectCoords, 0, this.cropRect, 0, 4);
+
+        if(this.detectorPtr == 0){
+            killAprilTags = true;
+        }
+    }
 
     public SignalPipeline(float _initDecimation, int[] _targets) {
         super();
@@ -74,6 +90,10 @@ public class SignalPipeline extends OpenCvPipeline {
         }
 
         _input.copyTo(colorStream);
+        if(this.cropRect != null){
+            Rect roi = new Rect(cropRect[0], cropRect[1], cropRect[2], cropRect[3]);
+            _input = _input.submat(roi);
+        }
         Imgproc.cvtColor(_input, _input, Imgproc.COLOR_RGB2GRAY);
 
         long detectionsPtrToArr = 0; // pointer to array
@@ -122,7 +142,6 @@ public class SignalPipeline extends OpenCvPipeline {
                 this.targetFound = 2;
                 detectionText = "Sleeve 3";
             } else {
-                this.targetFound = -1;
                 detectionText = "No Sleeve";
             }
         }

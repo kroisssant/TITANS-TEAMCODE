@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode.testing;
 import com.acmerobotics.dashboard.FtcDashboard;
 import com.acmerobotics.dashboard.config.Config;
 import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.PIDFCoefficients;
@@ -12,6 +13,7 @@ import org.firstinspires.ftc.teamcode.mechanisms.IntakeVechi;
 
 @Config
 @TeleOp
+@Disabled
 public class IntakePIDTuner extends LinearOpMode {
     public ControllerInput controller;
     IntakeVechi intakeVechi;
