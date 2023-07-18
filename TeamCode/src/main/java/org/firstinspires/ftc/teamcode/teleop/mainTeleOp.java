@@ -78,10 +78,7 @@ public class mainTeleOp extends LinearOpMode {
         motorIntake.setPower(power);
     }
 
-
     int target_partial = 0;
-
-
 
 
     private void handleHybridControl(ControllerInput _controller) {
@@ -122,6 +119,7 @@ public class mainTeleOp extends LinearOpMode {
             servoExtins.setPosition(1);
             flagExtendo = false;
         }
+
         //GROUND
         else if (_controller.left_trigger > 0.3) {
             brat(125, 0.6);
@@ -395,6 +393,7 @@ public class mainTeleOp extends LinearOpMode {
                 handleDriving(controller1);
 
             }
+
 
             if((controller1.leftBumperOnce() && flag ==false) ){
                 claw.setPosition(0.48);
