@@ -6,6 +6,8 @@
       <module name="HazulDarMaiMultNecazul.TeamCode" target="11" />
       <module name="RESCRIS.FtcRobotController" target="11" />
       <module name="RESCRIS.TeamCode" target="11" />
+      <module name="TITANS-TEAMCODE.FtcRobotController" target="11" />
+      <module name="TITANS-TEAMCODE.TeamCode" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

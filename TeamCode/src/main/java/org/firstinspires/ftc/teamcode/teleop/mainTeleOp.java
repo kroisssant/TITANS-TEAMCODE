@@ -5,21 +5,18 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
-import com.qualcomm.robotcore.hardware.PwmControl;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.ServoImplEx;
 import com.qualcomm.robotcore.util.ElapsedTime;
-import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.teamcode.lib.ControllerInput;
-import org.firstinspires.ftc.teamcode.mechanisms.IntakeNou;
 import org.firstinspires.ftc.teamcode.mechanisms.Lifter;
 import org.firstinspires.ftc.teamcode.mechanisms.LifterNou;
 import org.firstinspires.ftc.teamcode.roadrunner.drive.SampleMecanumDrive;
-import org.firstinspires.ftc.teamcode.util.Automatisms;
+
 @SuppressWarnings("all")
-@TeleOp(name = "Duck u dimi", group = "PP Rebuild")
-public class DrivePtKidsFestDuckYouDimi extends LinearOpMode {
+@TeleOp(name = "mainTeleOP", group = "PP Rebuild")
+public class mainTeleOp extends LinearOpMode {
 
     public ServoImplEx servo180;
     public ServoImplEx claw;
@@ -39,7 +36,7 @@ public class DrivePtKidsFestDuckYouDimi extends LinearOpMode {
 
     boolean flag = false;
 
-    boolean flagUp = false ;
+    boolean flagUp = false;
     boolean flagTwist = false;
     boolean flagExtendo = false;
     boolean flagGuide = false;
@@ -75,11 +72,10 @@ public class DrivePtKidsFestDuckYouDimi extends LinearOpMode {
     private double sliderPos = 1d;
     private final double kSlide = .0005;
 
-    private void brat( int target, double power){
+    private void brat(int target, double power){
         motorIntake.setTargetPosition(target);
         motorIntake.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         motorIntake.setPower(power);
-
     }
 
 
@@ -302,7 +298,7 @@ public class DrivePtKidsFestDuckYouDimi extends LinearOpMode {
                     -_controller.right_stick_x * 0.35
             ));
         }
-        else{
+        else {
             drive.setWeightedDrivePower(new Pose2d(     //REGULAR
                     _controller.left_stick_y * 0.7 +0.00001,
                     _controller.left_stick_x * 0.45,
@@ -326,17 +322,6 @@ public class DrivePtKidsFestDuckYouDimi extends LinearOpMode {
         ));
 
         drive.update();
-    }
-
-    private void loopThroughDrivemodes(){
-        if(driveMode == DRIVE_MODE.HYBRID){
-            return;
-            //driveMode = DRIVE_MODE.AUTO;
-        } else if (driveMode == DRIVE_MODE.AUTO){
-            driveMode = DRIVE_MODE.MANUAL;
-        } else {
-            driveMode = DRIVE_MODE.HYBRID;
-        }
     }
 
     @Override
@@ -368,17 +353,13 @@ public class DrivePtKidsFestDuckYouDimi extends LinearOpMode {
         motorIntake.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         drive = new SampleMecanumDrive(hardwareMap);
-        lifter = new Lifter(hardwareMap, telemetry);
+        lifterNou = new LifterNou(hardwareMap, telemetry);
 
         controller1 = new ControllerInput(gamepad1);
         controller2 = new ControllerInput(gamepad2);
 
         telemetry.addLine("mechanisms initialized. press START");
         telemetry.update();
-
-        lifterThread = new Thread(lifter);
-
-        lifterThread.start();
 
 //        lifter.setTargetTicks(0, 300);
         // -------------- START --------------
@@ -427,14 +408,7 @@ public class DrivePtKidsFestDuckYouDimi extends LinearOpMode {
             // controller 2
             handleHybridControl(controller2);
             break;
-
-
         }
     }
-
-
-
-
-
 }
 

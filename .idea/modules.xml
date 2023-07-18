@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RESCRIS.iml" filepath="$PROJECT_DIR$/.idea/modules/RESCRIS.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/RESCRIS.FtcRobotController.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/RESCRIS.FtcRobotController.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/RESCRIS.FtcRobotController.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/RESCRIS.FtcRobotController.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/RESCRIS.FtcRobotController.main.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/RESCRIS.FtcRobotController.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/RESCRIS.FtcRobotController.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/RESCRIS.FtcRobotController.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MeepMeepTesting/RESCRIS.MeepMeepTesting.iml" filepath="$PROJECT_DIR$/.idea/modules/MeepMeepTesting/RESCRIS.MeepMeepTesting.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MeepMeepTesting/RESCRIS.MeepMeepTesting.main.iml" filepath="$PROJECT_DIR$/.idea/modules/MeepMeepTesting/RESCRIS.MeepMeepTesting.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MeepMeepTesting/RESCRIS.MeepMeepTesting.test.iml" filepath="$PROJECT_DIR$/.idea/modules/MeepMeepTesting/RESCRIS.MeepMeepTesting.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TeamCode/RESCRIS.TeamCode.iml" filepath="$PROJECT_DIR$/.idea/modules/TeamCode/RESCRIS.TeamCode.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TeamCode/RESCRIS.TeamCode.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/TeamCode/RESCRIS.TeamCode.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TeamCode/RESCRIS.TeamCode.main.iml" filepath="$PROJECT_DIR$/.idea/modules/TeamCode/RESCRIS.TeamCode.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TeamCode/RESCRIS.TeamCode.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/TeamCode/RESCRIS.TeamCode.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TITANS-TEAMCODE.iml" filepath="$PROJECT_DIR$/.idea/modules/TITANS-TEAMCODE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/TITANS-TEAMCODE.FtcRobotController.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/TITANS-TEAMCODE.FtcRobotController.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/TITANS-TEAMCODE.FtcRobotController.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/TITANS-TEAMCODE.FtcRobotController.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/TITANS-TEAMCODE.FtcRobotController.main.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/TITANS-TEAMCODE.FtcRobotController.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/TITANS-TEAMCODE.FtcRobotController.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/TITANS-TEAMCODE.FtcRobotController.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MeepMeepTesting/TITANS-TEAMCODE.MeepMeepTesting.iml" filepath="$PROJECT_DIR$/.idea/modules/MeepMeepTesting/TITANS-TEAMCODE.MeepMeepTesting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MeepMeepTesting/TITANS-TEAMCODE.MeepMeepTesting.main.iml" filepath="$PROJECT_DIR$/.idea/modules/MeepMeepTesting/TITANS-TEAMCODE.MeepMeepTesting.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MeepMeepTesting/TITANS-TEAMCODE.MeepMeepTesting.test.iml" filepath="$PROJECT_DIR$/.idea/modules/MeepMeepTesting/TITANS-TEAMCODE.MeepMeepTesting.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TeamCode/TITANS-TEAMCODE.TeamCode.iml" filepath="$PROJECT_DIR$/.idea/modules/TeamCode/TITANS-TEAMCODE.TeamCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TeamCode/TITANS-TEAMCODE.TeamCode.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/TeamCode/TITANS-TEAMCODE.TeamCode.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TeamCode/TITANS-TEAMCODE.TeamCode.main.iml" filepath="$PROJECT_DIR$/.idea/modules/TeamCode/TITANS-TEAMCODE.TeamCode.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TeamCode/TITANS-TEAMCODE.TeamCode.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/TeamCode/TITANS-TEAMCODE.TeamCode.unitTest.iml" />
     </modules>
   </component>
 </project>

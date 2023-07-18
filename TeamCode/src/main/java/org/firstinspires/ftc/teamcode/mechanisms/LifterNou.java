@@ -43,31 +43,28 @@ public class LifterNou {
 
     public void setPosition(int ticks) {
         leftLifter.setTargetPosition(ticks);
-        rightLifter.setTargetPosition(ticks);
 
         leftLifter.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        rightLifter.setMode(DcMotor.RunMode.RUN_TO_POSITION);
     }
 
-    public void setUp(int postion, boolean flagUp, double power, double powerOnDec) {
-        setPosition(postion);
-        if(flagUp && lifterEncoder.getCurrentPosition() > leftLifter.getTargetPosition() - 100) {
-            leftLifter.setPower(powerOnDec);
-            rightLifter.setPower(powerOnDec);
-        } else if(flagUp) {
-            leftLifter.setPower(power);
-            rightLifter.setPower(power);
+    public void copyBehaviour() {
+        if(leftLifter.isBusy()) {
+            rightLifter.setPower(leftLifter.getPower());
         }
     }
 
-    public void setDown(int postion, boolean flagUp, double power, double powerOnDec) {
-        setPosition(postion);
-        if(!flagUp && lifterEncoder.getCurrentPosition() < leftLifter.getTargetPosition() + 100) {
-            leftLifter.setPower(powerOnDec);
-            rightLifter.setPower(powerOnDec);
-        } else if(!flagUp) {
-            leftLifter.setPower(power);
-            rightLifter.setPower(power);
+    public void setPower(boolean manual, double power, double powerOnDec) {
+        if(!manual) {
+            if(lifterEncoder.getCurrentPosition() > leftLifter.getTargetPosition() - 100) {
+                leftLifter.setPower(powerOnDec);
+            } else if(lifterEncoder.getCurrentPosition() > leftLifter.getTargetPosition()) {
+                leftLifter.setPower(power);
+            }
+            if(lifterEncoder.getCurrentPosition() < leftLifter.getTargetPosition() + 100) {
+                leftLifter.setPower(powerOnDec);
+            } else if(lifterEncoder.getCurrentPosition() < leftLifter.getTargetPosition()) {
+                leftLifter.setPower(power);
+            }
         }
     }
 }
