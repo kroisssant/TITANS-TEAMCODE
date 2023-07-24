@@ -35,7 +35,7 @@ public class teleop extends LinearOpMode {
 
     LifterNou.LIFTER_LEVEL reqState = null;
 
-    double power, powerOnDec;
+    double power = 0.9, powerOnDec = 0.25;
     boolean cycleSolo = false;
     boolean lifterSlow = false;
     @Override
@@ -46,6 +46,9 @@ public class teleop extends LinearOpMode {
 
         controller1 = new ControllerInput(gamepad1);
         controller2 = new ControllerInput(gamepad2);
+
+        lifter.setPosition(50);
+        lifter.setPower(0.3, 0, 0);
 
         waitForStart();
 
@@ -90,7 +93,7 @@ public class teleop extends LinearOpMode {
 
             lifter.copyBehaviour();
             lifter.setPower(power, powerOnDec, decDistance);
-            lifter.checkHeight();
+          //  lifter.checkHeight();
 //            if(lifterSlow){
 //                lifter.setPower(power, powerOnDec, decDistance);
 //            }
@@ -220,7 +223,6 @@ public class teleop extends LinearOpMode {
             lifterSlow = false;
             decDistance = 0;
             lifter.setPosition((int) (lifter.getPosition() + controller2.left_stick_y * 100));
-            Lif = 0.35
 
             flagUp = true;
         }

@@ -11,9 +11,9 @@ import org.firstinspires.ftc.teamcode.roadrunner.util.Encoder;
 
 public class LifterNou {
     public static enum LIFTER_LEVEL {
-        HIGH(2700),
+        HIGH(1700),
         LOW(1050),
-        MID(1750),
+        MID(1250),
         DOWN(0);
 
         public int ticks;
@@ -55,9 +55,8 @@ public class LifterNou {
     }
 
     public void copyBehaviour() {
-        if(leftLifter.isBusy()) {
             rightLifter.setPower(leftLifter.getPower());
-        }
+
     }
 
     public void setPower(double power, double powerOnDec, int decDistance) {

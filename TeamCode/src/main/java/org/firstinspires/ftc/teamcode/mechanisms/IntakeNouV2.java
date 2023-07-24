@@ -14,7 +14,7 @@ public class IntakeNouV2 {
 
     public ServoImplEx servo180;
     public ServoImplEx claw;
-    public ServoImplEx servoExtins;
+    public ServoImplEx servoExtins, servoExtinsLongFirst, servoExtinsLongSecond;
     public ServoImplEx guide;
 
     public DcMotorEx leftMotorIntake;
@@ -40,6 +40,8 @@ public class IntakeNouV2 {
         // slider
         servoExtins = hardwareMap.get(ServoImplEx.class, "servoExtins");
         servoExtins.setPosition(1);
+        servoExtinsLongFirst = hardwareMap.get(ServoImplEx.class, "servoExtinsLongFirst");
+        servoExtinsLongSecond = hardwareMap.get(ServoImplEx.class, "servoExtinsLongSecound");
 
         leftMotorIntake = hardwareMap.get(DcMotorEx.class, "leftMotorIntake");
         leftMotorIntake.setDirection(DcMotorSimple.Direction.FORWARD);
@@ -50,6 +52,7 @@ public class IntakeNouV2 {
         encoderBrat = new Encoder(leftMotorIntake);
 
         rightMotorIntake = hardwareMap.get(DcMotorEx.class, "rightMotorIntake");
+        rightMotorIntake.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         rightMotorIntake.setDirection(DcMotorSimple.Direction.REVERSE);
         rightMotorIntake.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rightMotorIntake.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
@@ -66,9 +69,7 @@ public class IntakeNouV2 {
         leftMotorIntake.setMode(DcMotor.RunMode.RUN_TO_POSITION);
     }
 
-    public void bratMovement(double power, int decDistance){
-        copyBehaviour();
-
+    public void setPower(double power, int decDistance){
         if(leftMotorIntake.getCurrentPosition() < leftMotorIntake.getTargetPosition()) {
             if(leftMotorIntake.getCurrentPosition() > leftMotorIntake.getTargetPosition() - decDistance){
                 leftMotorIntake.setPower(0.25);
@@ -85,6 +86,7 @@ public class IntakeNouV2 {
             }
 
         }
+        copyBehaviour();
     }
 
     public void checkHeight(){
@@ -92,6 +94,15 @@ public class IntakeNouV2 {
             leftMotorIntake.setPower(0);
             copyBehaviour();
         }
+    }
+
+    public int getPosition() {
+        return encoderBrat.getCurrentPosition();
+    }
+
+    public void extendoElLongo(double servo1, double servo2) {
+        servoExtinsLongFirst.setPosition(servo1);
+        servoExtinsLongSecond.setPosition(servo2);
     }
 
 }
